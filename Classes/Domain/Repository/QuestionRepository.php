@@ -39,10 +39,11 @@ class QuestionRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         $query = $this->createQuery();
 
         if (!empty($categories)) {
-            # categories can be multi-valued
+
             foreach ($categories as $demandedCategory) {
                 $constraintsCategories[] = $query->contains('categories', $demandedCategory);
             }
+
         }
 
         if (!empty($constraintsCategories)) {
@@ -50,12 +51,14 @@ class QuestionRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         }
 
         if ($excludeAlreadyDisplayedQuestions && isset($GLOBALS['EXT']['jpfaq']['alreadyDisplayed']) && !empty($GLOBALS['EXT']['jpfaq']['alreadyDisplayed'])) {
+
             $query->matching($query->logicalNot(
                 $query->in(
                     'uid',
                     $GLOBALS['EXT']['jpfaq']['alreadyDisplayed']
                 )
             ));
+
         }
 
         return $query->execute();

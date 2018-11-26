@@ -9,12 +9,14 @@ plugin.tx_jpfaq_faq {
     }
 
     persistence {
-        storagePid <
-        recursive <
+        storagePid >
+        recursive >
     }
 
     settings {
         excludeAlreadyDisplayedQuestions = 0
+
+        questions.categories >
 
         gtag {
             # Google Analytics Event tracking for helpful / unhelpfulresponse

@@ -8,11 +8,9 @@
         <f:render partial="SearchForm" arguments="{showNumberOfResults: showNumberOfResults}"/>
     </f:if>
 
-    <f:alias map="{headlineOutput: 'h{headlineTypeCategories}'}">
-        <{headlineOutput} class="jpfaqCategory" itemprop="about">
-            <f:for each="{categories}" as="category">{category.category}<br/></f:for>
-        </{headlineOutput}>
-    </f:alias>
+    <h2 class="jpfaqCategory" itemprop="about">
+        <f:for each="{categories}" as="category">{category.category}<br/></f:for>
+    </h2>
 
     <div class="jpfaqAll">
         <div class="jpfaqShowAll">

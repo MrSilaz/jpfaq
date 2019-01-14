@@ -76,7 +76,8 @@ plugin.tx_jpfaq_faq {
 page {
     # First include jQuery! Unset tx_jpfaq_jquery if you have your own jQuery lib
     includeJSFooter {
-        tx_jpfaq_jquery = EXT:jpfaq/Resources/Public/Javascript/jquery-3.2.1.min.js
+        #tx_jpfaq_jquery = EXT:jpfaq/Resources/Public/Javascript/jquery-3.2.1.min.js
+        tx_jpfaq_jquery >
         tx_jpfaq = EXT:jpfaq/Resources/Public/Javascript/jpFaq.js
     }
 
@@ -84,7 +85,8 @@ page {
         tx_jpfaq = EXT:jpfaq/Resources/Public/Styles/jpfaq.css
 
         # Unset if you already have Fontawesome included or do not wish to use it in the templates
-        tx_jpfaq_fontAwesome = //maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
+        #tx_jpfaq_fontAwesome = //maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
+        tx_jpfaq_fontAwesome >
     }
 }
 

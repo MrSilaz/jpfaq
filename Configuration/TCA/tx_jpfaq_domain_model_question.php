@@ -81,34 +81,29 @@ $questionTca = [
             ],
         ],
         'starttime' => [
-            'exclude' => true,
-            'behaviour' => [
-                'allowLanguageSynchronization' => true
-            ],
+            'exclude' => 1,
             'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.starttime',
             'config' => [
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
-                'size' => 13,
                 'eval' => 'datetime',
-                'default' => 0,
+                'range' => [
+                    'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
+                ],
+                'allowLanguageSynchronization' => true,
             ],
         ],
         'endtime' => [
-            'exclude' => true,
-            'behaviour' => [
-                'allowLanguageSynchronization' => true
-            ],
+            'exclude' => 1,
             'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.endtime',
             'config' => [
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
-                'size' => 13,
                 'eval' => 'datetime',
-                'default' => 0,
                 'range' => [
-                    'upper' => mktime(0, 0, 0, 1, 1, 2038)
+                    'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
                 ],
+                'allowLanguageSynchronization' => true,
             ],
         ],
 
@@ -195,8 +190,7 @@ $questionTca = [
             'config' => [
                 'type' => 'input',
                 'size' => 6,
-                'eval' => 'num',
-                'default' => 0
+                'eval' => 'num'
             ],
 
         ],
@@ -206,8 +200,7 @@ $questionTca = [
             'config' => [
                 'type' => 'input',
                 'size' => 6,
-                'eval' => 'num',
-                'default' => 0
+                'eval' => 'num'
             ],
 
         ],

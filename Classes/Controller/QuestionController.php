@@ -10,7 +10,6 @@ namespace Jp\Jpfaq\Controller;
  ***/
 
 use \Jp\Jpfaq\Domain\Model\Question;
-use TYPO3\CMS\Core\Utility\DebugUtility;
 
 /**
  * QuestionController
@@ -60,7 +59,6 @@ class QuestionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
     {
         $restrictToCategories = $this->settings['questions']['categories'];
         $excludeAlreadyDisplayedQuestions = intval($this->settings['excludeAlreadyDisplayedQuestions']);
-
         $questions = $this->questionRepository->findQuestionsWithConstraints($restrictToCategories, $excludeAlreadyDisplayedQuestions);
 
         $categories = [];

@@ -81,30 +81,25 @@ $categoryTca = [
             ],
         ],
         'starttime' => [
-            'exclude' => 1,
+            'exclude' => true,
+            'l10n_mode' => 'mergeIfNotBlank',
             'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.starttime',
             'config' => [
                 'type' => 'input',
-                'renderType' => 'inputDateTime',
+                'size' => 13,
                 'eval' => 'datetime',
-                'range' => [
-                    'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
-                ],
-                'allowLanguageSynchronization' => true,
-            ],
+                'default' => 0,
+            ]
         ],
         'endtime' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.endtime',
             'config' => [
                 'type' => 'input',
-                'renderType' => 'inputDateTime',
+                'size' => 13,
                 'eval' => 'datetime',
-                'range' => [
-                    'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
-                ],
-                'allowLanguageSynchronization' => true,
-            ],
+                'default' => 0,
+            ]
         ],
 
         'category' => [
